@@ -1,18 +1,50 @@
 
+class PepperonPizza:
+    def __init__(self, name, structure)
+        self.name = name
+        self.strcture = structure
 
-# total = 0
-# while person != 0:
-#     if person == 1:
-#         total += 3500
-#     elif person == 2:
-#         total += 2500
-#     elif person == 3:
-#         total += 4500
-#     print(total)
-#     input(person)
-class PepperonPizza
+class BBQPizza(Pizza): 
+    def __init__(self, extra_topinc: list = None) -> None:   
+        toppings = ["Курица", "лук", "Сыр"] 
+        self.extra_toppings = ["Барбекю", "Яйцо"] 
+ 
+        super.__init__("Барбекю", "стандартное", "какой-то", topping, "4500тенге") 
+ 
+    def add_topping(self, topping: str) -> None: 
+        choice = input(f"Хотите добавить {topping}? (да/нет)") 
+        if choice.lower() == "нет":
+            return 
+        if choice.lower( ) == "да":
+            if topping in self.toppings: 
+                print(Он уже есть в пицце) 
+                return 
+            self.topping.append(topping) 
+            print("Добавлено") 
+            return 
+ 
+    def chage_topping(self, new_topping: list) -> None: 
+        self.toppings = new_topping 
+        print("Ингредиент удалён") 
+ 
+    def ask_topping(self) -> str: 
+        return input( 
+            f"Какой ингредиент добавить ? {self.extra_toppings}: "
+        )
 
 
+class Order:
+
+    def __init__(self) -> None:
+        self.pizaas: list[Pizza] = []
+
+    def add_pizza(self, pizza: Pizza) -> None:
+        """Добавляет пиццу в заказ."""
+        self.pizzas.append(pizza)
+
+    def calculate_total(self) -> int:
+        """Возращает итоговую стоимость заказа."""
+        return sum(pizza.price for pizza in self.pizzas)
 
 class Terminal:
     def __init__(self) -> None:
@@ -52,7 +84,18 @@ class Terminal:
                 continue
     def confirm_order(self) -> bool:
         """Подверждает заказ, возращает True, если заказ подтвержден."""
-            
+        if self.order:
+            print(f"Итого к оплате: {self.order.calculate_total()} тенге")
+            confirmation = input("Вы хотите подтвердит ваш заказ? (да/нет): ")
+            if confirmation.lower() == "да":
+                print("Заказ подтвержден.")
+                return True
+            else:
+                print("Заказ отменен.")
+                self.order = 
+
+
+
 
 
 class Person:
